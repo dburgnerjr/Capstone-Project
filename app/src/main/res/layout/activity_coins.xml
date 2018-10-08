@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.danielburgnerjr.goodforcedemo.CoinsActivity">
+
+    <TextView
+        android:id="@+id/txtCoinsActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:text="@string/gfCoinsTitle" />
+
+    <TextView
+        android:id="@+id/txtGoodForcePurchaseCoins"
+        android:layout_width="303dp"
+        android:layout_height="124dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="166dp"
+        android:text="@string/gfCoinsPurchase" />
+
+    <Button
+        android:id="@+id/btnOneCoin"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:text="@string/gfOneCoin" />
+
+    <Button
+        android:id="@+id/btnFiveCoins"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:text="@string/gfFiveCoins" />
+
+    <Button
+        android:id="@+id/btnTenCoins"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnOneCoin"
+        android:layout_alignLeft="@+id/btnOneCoin"
+        android:layout_below="@+id/btnOneCoin"
+        android:text="@string/gfTenCoins" />
+
+    <Button
+        android:id="@+id/btnTwentyCoins"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnFiveCoins"
+        android:layout_alignLeft="@+id/btnFiveCoins"
+        android:layout_below="@+id/btnFiveCoins"
+        android:text="@string/gf20Coins" />
+
+    <Button
+        android:id="@+id/btnFiftyCoins"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnOneCoin"
+        android:layout_alignLeft="@+id/btnOneCoin"
+        android:layout_marginBottom="113dp"
+        android:text="@string/gf50Coins" />
+
+    <Button
+        android:id="@+id/btn100Coins"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnFiveCoins"
+        android:layout_alignLeft="@+id/btnFiveCoins"
+        android:layout_alignTop="@+id/btnFiftyCoins"
+        android:text="@string/gf100Coins" />
+</android.widget.RelativeLayout>

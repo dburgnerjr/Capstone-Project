@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.danielburgnerjr.goodforcedemo.ExtraLivesActivity">
+
+    <TextView
+        android:id="@+id/txtExtraLivesActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="94dp"
+        android:text="@string/gfExtraLivesTitle" />
+
+    <TextView
+        android:id="@+id/txtGoodForcePurchaseExtraLives"
+        android:layout_width="303dp"
+        android:layout_height="124dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="166dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnOneExtraLife"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:text="@string/gfOneExtraLife" />
+
+    <Button
+        android:id="@+id/btnTwoExtraLives"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:text="@string/gfTwoExtraLives" />
+
+    <Button
+        android:id="@+id/btnThreeExtraLives"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnOneExtraLife"
+        android:layout_alignLeft="@+id/btnOneExtraLife"
+        android:layout_below="@+id/btnOneExtraLife"
+        android:text="@string/gfThreeExtraLives" />
+
+    <Button
+        android:id="@+id/btnFourExtraLives"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnTwoExtraLives"
+        android:layout_alignLeft="@+id/btnTwoExtraLives"
+        android:layout_below="@+id/btnTwoExtraLives"
+        android:text="@string/gfFourExtraLives" />
+
+    <Button
+        android:id="@+id/btnFiveExtraLives"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btnOneExtraLife"
+        android:layout_alignLeft="@+id/btnOneExtraLife"
+        android:layout_marginBottom="113dp"
+        android:text="@string/gfFiveExtraLives" />
+
+    <Button
+        android:id="@+id/btnTenExtraLives"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnTwoExtraLives"
+        android:layout_alignLeft="@+id/btnTwoExtraLives"
+        android:layout_alignTop="@+id/btnFiveExtraLives"
+        android:text="@string/gfTenExtraLives" />
+</android.widget.RelativeLayout>

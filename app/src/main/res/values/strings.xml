@@ -1,3 +1,97 @@
 <resources>
     <string name="app_name">GoodForce Demo</string>
+    <string name="premise">Play trivia, win cash, make debt disappear.</string>
+    <string name="comingSoon">Coming soon to a phone near you.</string>
+    <string name="beginPlay">Begin</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <string name="dailyPrize">Daily Prize: $1.00</string>
+    <string name="playerId">Welcome Player, #1</string>
+    <string name="gameStart">Free Play</string>
+    <string name="progressVsGoal">Progress: $0, Goal: $15,000</string>
+    <string name="watchVideo">Watch Video</string>
+    <string name="gameRules">Game Rules</string>
+    <string name="extraLives">Extra Lives: 2</string>
+    <string name="gfCoins">Coins: 2</string>
+    <string name="tellFriend">Tell A Friend</string>
+    <string name="gfPoints">Points: 100</string>
+    <string name="aboutGF">About</string>
+    <string name="logout">Logout</string>
+
+    <string name="aboutGFTitle">About GoodForce</string>
+    <string name="gfPurpose">The object of GoodForce is to answer trivia questions in an effort to win cash while crowdfunding loans (credit cards, car loans, payday loans and personal loans) so that players can be debt-free.</string>
+
+    <string name="gfCoinsTitle">GoodForce Coins</string>
+    <string name="gfCoinsPurchase">You can purchase coins to play more than your allotted free plays.  You earn 500 Points for each coin you purchase.</string>
+    <string name="gfOneCoin">One Coin .50</string>
+    <string name="gfFiveCoins">Five Coins 2.50</string>
+    <string name="gfTenCoins">Ten Coins 5.00</string>
+    <string name="gf20Coins">20 Coins 10.00</string>
+    <string name="gf50Coins">50 Coins 25.00</string>
+    <string name="gf100Coins">100 Coins 50.00</string>
+
+    <string name="answerOutcome">Correct!</string>
+    <string name="answerExplanation">Explanation goes here.</string>
+    <string name="answerContinue">Continue</string>
+    <string name="answerGameScore">Your Score: 0</string>
+    <string name="answerStrikes">Strikes: 0</string>
+
+    <string name="gfExtraLivesTitle">GoodForce Extra Lives</string>
+    <string name="gfExtraLivesPurchase">You can purchase extra lives to extend your game if you reach your third strike.  You earn 500 Points for each extra life you purchase.</string>
+    <string name="gfOneExtraLife">One Extra Life .50</string>
+    <string name="gfTwoExtraLives">2 Extra Lives 1.00</string>
+    <string name="gfThreeExtraLives">3 Extra Lives 1.50</string>
+    <string name="gfFourExtraLives">4 Extra Lives 2.00</string>
+    <string name="gfFiveExtraLives">5 Extra Lives 2.50</string>
+    <string name="gfTenExtraLives">10 Extra Lives 5.00</string>
+
+    <string name="gameOver">Game Over</string>
+    <string name="yourScore">0</string>
+    <string name="playAgain">Play Again?</string>
+    <string name="playerRank">Your Rank: 0</string>
+
+    <string name="gfGameRules">GoodForce Game Rules</string>
+    <string name="gfGRComingSoon">Coming soon.</string>
+
+    <string name="loginTitle">Login to GoodForce</string>
+    <string name="emailAddress">0</string>
+    <string name="password">Play Again?</string>
+    <string name="loginButton">Login</string>
+    <string name="forgotPassword">Forgot Password?</string>
+
+    <string name="logoutActivity">You Are Logged Out</string>
+    <string name="thankYou">Thank you for playing GoodForce.</string>
+
+    <string name="pointsActivity">Points Log</string>
+    <string name="pointsLog">This is how the user earns points.</string>
+
+    <string name="questionName">This statement is either a true or false statement.</string>
+    <string name="questionValue">10 Points</string>
+    <string name="questionTrue">True</string>
+    <string name="questionFalse">False</string>
+    <string name="questionGameScore">Your Score: 0</string>
+    <string name="questionTimer">10</string>
+
+    <string name="registerTitle">Register</string>
+    <string name="registerFirstName">First Name </string>
+    <string name="registerLastName">Last Name </string>
+    <string name="registerEmailAddress">Email </string>
+    <string name="registerPassword">Password </string>
+    <string name="registerPasswordConfirm">Password again </string>
+    <string name="registerZipCode">ZIP Code </string>
+    <string name="registerFinal">Register</string>
+
+    <string name="tellFriendActivity">Tell A Friend</string>
+    <string name="sharingIsCaring">Every time a friend signs up for GoodForce using your invite code, you\'ll receive one coin and 1000 points.</string>
+    <string name="inviteEmailAddress">Friend\'s Email </string>
+    <string name="invitePhone">Friend\'s Phone </string>
+    <string name="or">OR </string>
+    <string name="goodForceCode">GoodForce Code:  DB105244</string>
+    <string name="inviteFinal">Invite</string>
+
+    <string name="watchVideoActivity">Watch a brief video.</string>
+    <string name="finalScore">Final Score</string>
+    <string name="mainMenu">Main Menu</string>
+
 </resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.danielburgnerjr.goodforcedemo.FinalScoreActivity">
+
+    <TextView
+        android:id="@+id/txtGameOver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="88dp"
+        android:text="@string/gameOver" />
+
+    <TextView
+        android:id="@+id/txtYourScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtGameOver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:text="@string/yourScore" />
+
+    <Button
+        android:id="@+id/btnPlayAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtYourScore"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:text="@string/playAgain" />
+
+    <TextView
+        android:id="@+id/txtRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnPlayAgain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="89dp"
+        android:text="@string/playerRank" />
+</android.widget.RelativeLayout>

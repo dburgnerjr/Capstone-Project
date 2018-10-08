@@ -16,6 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GameStartActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".CoinsActivity" />
+        <activity android:name=".AnswerActivity" />
+        <activity android:name=".ExtraLivesActivity" />
+        <activity android:name=".FinalScoreActivity" />
+        <activity android:name=".GameRulesActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".LogoutActivity" />
+        <activity android:name=".PointsActivity" />
+        <activity android:name=".QuestionActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".TellFriendActivity" />
+        <activity android:name=".WatchVideoActivity"></activity>
     </application>
 
 </manifest>

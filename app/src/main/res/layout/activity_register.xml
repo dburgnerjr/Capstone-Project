@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.danielburgnerjr.goodforcedemo.RegisterActivity">
+
+    <TextView
+        android:id="@+id/txtRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text="@string/registerTitle" />
+
+    <TextView
+        android:id="@+id/txtFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtRegister"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/registerFirstName" />
+
+    <EditText
+        android:id="@+id/edtFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtRegister"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/registerFirstName" />
+
+    <TextView
+        android:id="@+id/txtLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtFirstName"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/registerLastName" />
+
+    <EditText
+        android:id="@+id/edtLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtLastName"
+        android:layout_alignBottom="@+id/txtLastName"
+        android:layout_alignLeft="@+id/edtFirstName"
+        android:layout_alignStart="@+id/edtFirstName"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/registerLastName" />
+
+
+    <TextView
+        android:id="@+id/txtEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtLastName"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/registerEmailAddress" />
+
+    <EditText
+        android:id="@+id/edtEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtLastName"
+        android:layout_alignStart="@+id/edtLastName"
+        android:layout_below="@+id/edtLastName"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/txtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtEmailAddress"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/registerPassword" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtConfirmPassword"
+        android:layout_alignLeft="@+id/edtEmailAddress"
+        android:layout_alignStart="@+id/edtEmailAddress"
+        android:ems="10"
+        android:inputType="numberPassword" />
+
+    <TextView
+        android:id="@+id/txtConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtPassword"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/registerPasswordConfirm" />
+
+    <EditText
+        android:id="@+id/edtConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtConfirmPassword"
+        android:layout_alignLeft="@+id/edtPassword"
+        android:layout_alignStart="@+id/edtPassword"
+        android:ems="10"
+        android:inputType="numberPassword" />
+
+    <TextView
+        android:id="@+id/txtZipCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtConfirmPassword"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/registerZipCode" />
+
+    <EditText
+        android:id="@+id/edtZipCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtZipCode"
+        android:layout_alignLeft="@+id/edtConfirmPassword"
+        android:layout_alignStart="@+id/edtConfirmPassword"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtZipCode"
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@+id/txtConfirmPassword"
+        android:layout_toRightOf="@+id/txtConfirmPassword"
+        android:text="@string/registerFinal" />
+
+</android.widget.RelativeLayout>

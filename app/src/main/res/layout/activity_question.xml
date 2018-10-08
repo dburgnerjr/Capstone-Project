@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.danielburgnerjr.goodforcedemo.QuestionActivity">
+
+    <TextView
+        android:id="@+id/txtQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="165dp"
+        android:text="@string/questionName" />
+
+    <TextView
+        android:id="@+id/txtQuestionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="64dp"
+        android:layout_toLeftOf="@+id/txtQuestion"
+        android:layout_toStartOf="@+id/txtQuestion"
+        android:text="@string/questionValue" />
+
+    <Button
+        android:id="@+id/btnTrue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtQuestion"
+        android:layout_marginTop="107dp"
+        android:layout_toLeftOf="@+id/txtQuestion"
+        android:layout_toStartOf="@+id/txtQuestion"
+        android:text="@string/questionTrue" />
+
+    <Button
+        android:id="@+id/btnFalse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnTrue"
+        android:layout_toEndOf="@+id/txtQuestion"
+        android:layout_toRightOf="@+id/txtQuestion"
+        android:text="@string/questionFalse" />
+
+    <TextView
+        android:id="@+id/txtScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnFalse"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/questionGameScore" />
+
+    <TextView
+        android:id="@+id/txtTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtQuestionValue"
+        android:layout_alignBottom="@+id/txtQuestionValue"
+        android:layout_alignEnd="@+id/btnFalse"
+        android:layout_alignRight="@+id/btnFalse"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:text="@string/questionTimer" />
+</android.widget.RelativeLayout>
