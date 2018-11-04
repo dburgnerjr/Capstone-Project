@@ -20,6 +20,7 @@ public class WatchVideoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intA = new Intent(WatchVideoActivity.this, FinalScoreActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -27,6 +28,7 @@ public class WatchVideoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intA = new Intent(WatchVideoActivity.this, GameStartActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });

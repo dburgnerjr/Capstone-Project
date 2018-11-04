@@ -27,6 +27,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, QuestionActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -34,6 +35,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, GameRulesActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -41,6 +43,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, ExtraLivesActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -48,6 +51,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, WatchVideoActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -55,6 +59,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, CoinsActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -62,6 +67,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, TellFriendActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -69,6 +75,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, PointsActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -76,6 +83,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, AboutActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
@@ -83,6 +91,7 @@ public class GameStartActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, LogoutActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });

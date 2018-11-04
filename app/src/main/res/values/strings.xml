@@ -52,8 +52,15 @@
     <string name="playerRank">Your Rank: 0</string>
 
     <string name="gfGameRules">GoodForce Game Rules</string>
-    <string name="gfGRComingSoon">Coming soon.</string>
-
+    <string name="gfGRNumber1">1. GoodForce is for everyone!  You do not need to have credit card, automobile, personal or payday loans to play.</string>
+    <string name="gfGRNumber2">2. Each player gets two free rounds a day, made available at midnight, Central Time.</string>
+    <string name="gfGRNumber3">3. Each round after the two free rounds cost a GoodForce coin. GoodForce coins cost 50 cents apiece.</string>
+    <string name="gfGRNumber4">4. Each time you play you will be playing for yourself in a fast-paced trivia game.</string>
+    <string name="gfGRNumber5">5. Each time you miss a question, you generate a strike. If you get three strikes, your round ends unless you have an extra life.</string>
+    <string name="gfGRNumber6">6. You can use an extra life one time and if you miss a question again, your round ends.</string>
+    <string name="gfGRNumber7">7. If you have the highest score at the end of the week you win the cash prize.</string>
+    <string name="gfGRNumber8">8. You can play multiple times a day to improve your score, your highest score for the week will count for the purpose of winning the cash prize.</string>
+    <string name="gfGRNumber9">9. Don\'t play GoodForce with more than one account!  If you do, we will ban you from the game.</string>
     <string name="loginTitle">Login to GoodForce</string>
     <string name="emailAddress">Email Address:</string>
     <string name="password">Password:</string>
