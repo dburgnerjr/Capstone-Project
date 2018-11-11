@@ -2,9 +2,7 @@ package com.danielburgnerjr.goodforcedemo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,7 +22,6 @@ public class RegisterActivity extends AppCompatActivity {
     EditText edtConfirmPassword;
     EditText edtZipCode;
     Button btnRegister;
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
     String strUsername;
     String strPassword;
 

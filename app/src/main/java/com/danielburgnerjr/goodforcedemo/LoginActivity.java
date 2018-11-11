@@ -1,5 +1,6 @@
 package com.danielburgnerjr.goodforcedemo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -16,14 +17,17 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtPassword;
     private Button btnLogin;
     private int nAttempts = 3;
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);   // NPE occurs here
-    String strUsername = preferences.getString("username", "");
-    String strPassword = preferences.getString("password", "");
+    public SharedPreferences preferences;   // NPE occurs here
+    private String strUsername;
+    private String strPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        preferences = this.getPreferences(Context.MODE_PRIVATE);
+        strUsername = preferences.getString("username", "");
+        strPassword = preferences.getString("password", "");
         loginButton();
     }
 
@@ -45,6 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         } else {
                             Toast.makeText(LoginActivity.this, "User and Password is not correct",
+                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Username is" + strUsername,
+                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Password is" + strPassword,
                                     Toast.LENGTH_SHORT).show();
                             nAttempts--;
                             if(nAttempts == 0) {
