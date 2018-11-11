@@ -29,7 +29,8 @@
         <activity android:name=".QuestionActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".TellFriendActivity" />
-        <activity android:name=".WatchVideoActivity"></activity>
+        <activity android:name=".WatchVideoActivity" />
+        <activity android:name=".ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

@@ -3,9 +3,9 @@ package com.danielburgnerjr.goodforcedemo;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtEmailAddress;
     private EditText edtPassword;
     private Button btnLogin;
+    private Button btnForgotPW;
     private int nAttempts = 3;
     public SharedPreferences preferences;   // NPE occurs here
     private String strUsername;
@@ -25,9 +26,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        preferences = this.getPreferences(Context.MODE_PRIVATE);
+        preferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         strUsername = preferences.getString("username", "");
         strPassword = preferences.getString("password", "");
+        Log.d("blah", "onClick: " + strUsername + " " + strPassword);
+
         loginButton();
     }
 
@@ -35,13 +38,13 @@ public class LoginActivity extends AppCompatActivity {
         edtEmailAddress = (EditText)findViewById(R.id.edtEmailAddress);
         edtPassword = (EditText)findViewById(R.id.edtPassword);
         btnLogin = (Button)findViewById(R.id.btnLogin);
+        btnForgotPW = (Button)findViewById(R.id.btnForgotPW);
 
         btnLogin.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(edtEmailAddress.getText().toString().equals(strUsername) &&
-                                edtPassword.getText().toString().equals(strPassword)  ) {
+                        if(edtEmailAddress.getText().toString().equals(strUsername) && edtPassword.getText().toString().equals(strPassword)) {
                             Toast.makeText(LoginActivity.this, "User and Password is correct",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, GameStartActivity.class);
@@ -65,6 +68,15 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        btnForgotPW.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intA = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                startActivity(intA);
+                finish();
+            }
+        });
+
     }
 
 }
