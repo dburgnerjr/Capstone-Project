@@ -39,7 +39,7 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/registerFirstName" />
+        android:hint="@string/registerFirstName" />
 
     <TextView
         android:id="@+id/txtLastName"
@@ -63,7 +63,7 @@
         android:layout_alignStart="@+id/edtFirstName"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/registerLastName" />
+        android:hint="@string/registerLastName" />
 
 
     <TextView
@@ -86,7 +86,8 @@
         android:layout_alignStart="@+id/edtLastName"
         android:layout_below="@+id/edtLastName"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:hint="@string/registerEmailAddress"/>
 
     <TextView
         android:id="@+id/txtPassword"
@@ -108,7 +109,8 @@
         android:layout_alignLeft="@+id/edtEmailAddress"
         android:layout_alignStart="@+id/edtEmailAddress"
         android:ems="10"
-        android:inputType="numberPassword" />
+        android:inputType="textPassword"
+        android:hint="@string/registerPassword" />
 
     <TextView
         android:id="@+id/txtConfirmPassword"
@@ -130,7 +132,8 @@
         android:layout_alignLeft="@+id/edtPassword"
         android:layout_alignStart="@+id/edtPassword"
         android:ems="10"
-        android:inputType="numberPassword" />
+        android:inputType="textPassword"
+        android:hint="@string/registerPasswordConfirm" />
 
     <TextView
         android:id="@+id/txtZipCode"
@@ -152,7 +155,8 @@
         android:layout_alignLeft="@+id/edtConfirmPassword"
         android:layout_alignStart="@+id/edtConfirmPassword"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:hint="@string/registerZipCode" />
 
     <Button
         android:id="@+id/btnRegister"
