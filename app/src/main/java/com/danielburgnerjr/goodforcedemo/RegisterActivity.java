@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -23,8 +25,12 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText edtConfirmPassword;
     private EditText edtZipCode;
     private Button btnRegister;
+    private String strFirstName;
+    private String strLastName;
     private String strUsername;
     private String strPassword;
+    private String strZipCode;
+    private User usrU;
     public SharedPreferences preferences;   // NPE occurs here
 
     @Override
@@ -46,8 +52,22 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 boolean bDataCheck = checkDataEntered();
                 if (bDataCheck == true) {
+                    usrU = new User();
+                    strFirstName = edtFirstName.getText().toString();
+                    usrU.setFirstName(strFirstName);
+                    strLastName = edtLastName.getText().toString();
+                    usrU.setLastName(strLastName);
                     strUsername = edtEmailAddress.getText().toString();
+                    usrU.setEmailAddress(strUsername);
                     strPassword = edtPassword.getText().toString();
+                    usrU.setPassword(strPassword);
+                    strZipCode = edtZipCode.getText().toString();
+                    usrU.setZipCode(strZipCode);
+                    usrU.setPlayerNumber(1);
+                    usrU.setCoins(2);
+                    usrU.setExtraLives(2);
+                    usrU.setGFPoints(100);
+                    usrU.setGoodForceCode("DB105244");
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     SharedPreferences.Editor e = preferences.edit();
                     e.putString("username", strUsername);
@@ -56,6 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                     e.commit();
                     intent.putExtra("username", strUsername);
                     intent.putExtra("password", strPassword);
+                    intent.putExtra("User", (Serializable) usrU);  // User cannot be cast to Serializable
                     startActivity(intent);
                     finish();
                 }
