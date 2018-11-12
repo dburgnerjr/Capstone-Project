@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent intA = new Intent(MainActivity.this, GameStartActivity.class);
                 startActivity(intA);
+                finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
