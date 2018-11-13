@@ -32,7 +32,7 @@
         android:text="@string/answerContinue" />
 
     <TextView
-        android:id="@+id/txtScore"
+        android:id="@+id/txtScoreAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -45,9 +45,11 @@
         android:id="@+id/txtNumStrikes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/txtScore"
-        android:layout_toEndOf="@+id/txtAnswerExplanation"
-        android:layout_toRightOf="@+id/txtAnswerExplanation"
+        android:layout_alignTop="@+id/txtScoreAnswer"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="149dp"
+        android:layout_toEndOf="@+id/txtScoreAnswer"
+        android:layout_toRightOf="@+id/txtScoreAnswer"
         android:text="@string/answerStrikes" />
 
 </android.widget.RelativeLayout>

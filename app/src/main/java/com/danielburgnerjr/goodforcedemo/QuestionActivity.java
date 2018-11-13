@@ -22,6 +22,7 @@ public class QuestionActivity extends Activity {
     private boolean bYourAnswer;
     private int nStrikes;
     private int nQuestionNumber;
+    private int nPlayerNumber;
     private int nExtraLives;
     private boolean bExtraLifeUsed;
     private int nScore;
@@ -43,14 +44,18 @@ public class QuestionActivity extends Activity {
 
         intQ = getIntent();
         usrU = (User) intQ.getSerializableExtra("User");
+        if (usrU != null) {
+            nExtraLives = usrU.getExtraLives();
+            nPlayerNumber = usrU.getPlayerNumber();
+        }
         gmG = (Game) intQ.getSerializableExtra("Game");
         if (gmG == null) {
+            gmG = new Game();
             nQuestionNumber = 1;
             nStrikes = 0;
             bExtraLifeUsed = false;
-            nExtraLives = usrU.getExtraLives();
             nScore = 0;
-            gmG.setPlayerNumber(usrU.getPlayerNumber());
+            gmG.setPlayerNumber(nPlayerNumber);
         } else {
             nQuestionNumber = (gmG.getQuestionNumber() + 1);
             nStrikes = gmG.getStrikes();
@@ -61,7 +66,7 @@ public class QuestionActivity extends Activity {
 
         txtQuestion.setText("This is a sample question");
         txtQuestionValue.setText(((nQuestionNumber - nStrikes) * 10) + " Points");
-        txtScore.setText(nScore);
+        txtScore.setText("Your Score: " + nScore);
         txtTimer.setText("10");
 
         Random randomno = new Random();
@@ -76,8 +81,8 @@ public class QuestionActivity extends Activity {
                 bYourAnswer = !bCorrectAnswer;
                 intA.putExtra("YourAnswer", bYourAnswer);
                 intA.putExtra("CorrectAnswer", bCorrectAnswer);
-                //intA.putExtra("User", usrU);
-                //intA.putExtra("Game", gmG);
+                intA.putExtra("User", usrU);
+                intA.putExtra("Game", gmG);
                 startActivity(intA);
                 finish();
             }

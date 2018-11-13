@@ -163,7 +163,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtZipCode"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="26dp"
+        android:layout_centerHorizontal="true"
         android:layout_toEndOf="@+id/txtConfirmPassword"
         android:layout_toRightOf="@+id/txtConfirmPassword"
         android:text="@string/registerFinal" />

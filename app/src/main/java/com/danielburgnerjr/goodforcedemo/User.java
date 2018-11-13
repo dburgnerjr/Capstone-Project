@@ -1,6 +1,8 @@
 package com.danielburgnerjr.goodforcedemo;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String strFirstName;
     private String strLastName;
     private String strEmailAddress;

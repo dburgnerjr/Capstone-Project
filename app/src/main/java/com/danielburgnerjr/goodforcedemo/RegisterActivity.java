@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                     e.commit();
                     intent.putExtra("username", strUsername);
                     intent.putExtra("password", strPassword);
-                    intent.putExtra("User", (Serializable) usrU);  // User cannot be cast to Serializable
+                    intent.putExtra("User", usrU);
                     startActivity(intent);
                     finish();
                 }

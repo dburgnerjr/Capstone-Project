@@ -1,6 +1,8 @@
 package com.danielburgnerjr.goodforcedemo;
 
-public class Game {
+import java.io.Serializable;
+
+public class Game implements Serializable {
     private int nPlayerNumber;
     private int nQuestionNumber;
     private int nScore;

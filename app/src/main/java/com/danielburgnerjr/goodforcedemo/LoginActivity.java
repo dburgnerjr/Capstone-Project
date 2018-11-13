@@ -18,7 +18,9 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private Button btnForgotPW;
     private int nAttempts = 3;
-    public SharedPreferences preferences;   // NPE occurs here
+    private Intent intU;
+    private User usrU;
+    public SharedPreferences preferences;   
     private String strUsername;
     private String strPassword;
 
@@ -40,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = (Button)findViewById(R.id.btnLogin);
         btnForgotPW = (Button)findViewById(R.id.btnForgotPW);
 
+        intU = getIntent();
+        usrU = (User) intU.getSerializableExtra("User");
         btnLogin.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -48,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "User and Password is correct",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, GameStartActivity.class);
+                            intent.putExtra("User", usrU);
                             startActivity(intent);
                             finish();
                         } else {
