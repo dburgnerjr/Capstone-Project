@@ -39,6 +39,9 @@ public class GameStartActivity extends Activity {
             btnExtraLives.setEnabled(false);
             btnGoodForceCoins.setEnabled(false);
             btnGFPoints.setEnabled(false);
+            btnInvite.setEnabled(false);
+            btnWatchVideo.setEnabled(false);
+            btnLogout.setEnabled(false);
         } else {
             txtPlayerId.setText("Welcome " + usrU.getFirstName() + ", #" + usrU.getPlayerNumber());
             btnExtraLives.setText("Extra Lives: " + usrU.getExtraLives());
@@ -66,6 +69,7 @@ public class GameStartActivity extends Activity {
         btnExtraLives.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, ExtraLivesActivity.class);
+                intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
@@ -74,6 +78,7 @@ public class GameStartActivity extends Activity {
         btnWatchVideo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, WatchVideoActivity.class);
+                intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
@@ -82,6 +87,7 @@ public class GameStartActivity extends Activity {
         btnGoodForceCoins.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, CoinsActivity.class);
+                intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
@@ -90,6 +96,7 @@ public class GameStartActivity extends Activity {
         btnInvite.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, TellFriendActivity.class);
+                intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
@@ -98,6 +105,7 @@ public class GameStartActivity extends Activity {
         btnGFPoints.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, PointsActivity.class);
+                intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
@@ -106,6 +114,7 @@ public class GameStartActivity extends Activity {
         btnAbout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, AboutActivity.class);
+                intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
@@ -114,6 +123,7 @@ public class GameStartActivity extends Activity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(GameStartActivity.this, LogoutActivity.class);
+                intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
                 //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();

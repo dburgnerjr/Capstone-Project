@@ -13,8 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.Serializable;
-
+import com.google.gson.Gson;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -31,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String strPassword;
     private String strZipCode;
     private User usrU;
+    private Gson gsonG;
     public SharedPreferences preferences;   // NPE occurs here
 
     @Override
@@ -70,12 +70,10 @@ public class RegisterActivity extends AppCompatActivity {
                     usrU.setGoodForceCode("DB105244");
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     SharedPreferences.Editor e = preferences.edit();
-                    e.putString("username", strUsername);
-                    e.putString("password", strPassword);
-                    Log.d("blah", "onClick: " + strUsername + " " + strPassword);
+                    gsonG = new Gson();
+                    String strJson = gsonG.toJson(usrU);
+                    e.putString("User", strJson);
                     e.commit();
-                    intent.putExtra("username", strUsername);
-                    intent.putExtra("password", strPassword);
                     intent.putExtra("User", usrU);
                     startActivity(intent);
                     finish();
