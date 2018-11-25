@@ -73,8 +73,32 @@ public class QuestionActivity extends Activity {
 
         bCorrectAnswer = randomno.nextBoolean();
 
-        mCountDown = new CountDownTimer(10000, 1000) {
+        // OnClickListener not working and playing well with CountDownTimer
+        btnTrue.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
+                intA.putExtra("YourAnswer", bYourAnswer);
+                intA.putExtra("CorrectAnswer", bCorrectAnswer);
+                intA.putExtra("User", usrU);
+                intA.putExtra("Game", gmG);
+                startActivity(intA);
+                finish();
+            }
+        });
 
+        btnFalse.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
+                intA.putExtra("YourAnswer", bYourAnswer);
+                intA.putExtra("CorrectAnswer", bCorrectAnswer);
+                intA.putExtra("User", usrU);
+                intA.putExtra("Game", gmG);
+                startActivity(intA);
+                finish();
+            }
+        });
+
+        mCountDown = new CountDownTimer(10000, 1000) {
             @Override
             public void onFinish() {
                 Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
@@ -87,25 +111,6 @@ public class QuestionActivity extends Activity {
                 finish();
             }
 
-            // OnClickListener not working and playing well with CountDownTimer
-/*          btnTrue.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
-                    startActivity(intA);
-                    finish();
-                    //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            btnFalse.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
-                    startActivity(intA);
-                    finish();
-                    //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
-                }
-            });
-*/
             @Override
             public void onTick(long millisUntilFinished) {
                 txtTimer.setText(String.valueOf(millisUntilFinished / 1000));

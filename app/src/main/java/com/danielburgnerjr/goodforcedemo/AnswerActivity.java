@@ -52,6 +52,9 @@ public class AnswerActivity extends Activity {
                 if ((gmG.getExtraLives() > 0) && (gmG.isExtraLifeUsed() == false)) {
                     gmG.setStrikes(gmG.getStrikes() - 1);
                     gmG.setExtraLives(gmG.getExtraLives() - 1);
+                    usrU.setExtraLives(usrU.getExtraLives() - 1);
+                    gmG.setExtraLifeUsed(true);
+                } else if (gmG.getExtraLives() > 0) {
                     gmG.setExtraLifeUsed(true);
                 }
             }
