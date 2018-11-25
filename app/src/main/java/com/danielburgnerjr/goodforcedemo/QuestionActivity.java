@@ -1,6 +1,7 @@
 package com.danielburgnerjr.goodforcedemo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -22,6 +23,7 @@ public class QuestionActivity extends Activity {
     private boolean bYourAnswer;
     private int nStrikes;
     private int nQuestionNumber;
+    private int nQuestionValue;
     private int nPlayerNumber;
     private int nExtraLives;
     private boolean bExtraLifeUsed;
@@ -53,19 +55,44 @@ public class QuestionActivity extends Activity {
             gmG = new Game();
             nQuestionNumber = 1;
             nStrikes = 0;
+            nQuestionValue = 10;
             bExtraLifeUsed = false;
             nScore = 0;
+            gmG.setQuestionNumber(nQuestionNumber);
+            gmG.setStrikes(nStrikes);
+            gmG.setScore(nScore);
+            gmG.setStreak(0);
+            gmG.setQuestionValue(nQuestionValue);
             gmG.setPlayerNumber(nPlayerNumber);
+            gmG.setExtraLives(usrU.getExtraLives());
+            gmG.setMaxStrikes(gmG.getExtraLives());
+            gmG.setExtraLifeUsed(bExtraLifeUsed);
         } else {
-            nQuestionNumber = (gmG.getQuestionNumber() + 1);
+            nQuestionNumber = (gmG.getQuestionNumber());
             nStrikes = gmG.getStrikes();
+            nQuestionValue = (nQuestionNumber - nStrikes) * 10;
+            gmG.setQuestionValue(nQuestionValue);
             bExtraLifeUsed = gmG.isExtraLifeUsed();
             nExtraLives = gmG.getExtraLives();
+            if (nExtraLives == usrU.getExtraLives()) {
+                usrU.setExtraLives(nExtraLives);
+            }
             nScore = gmG.getScore();
         }
+        if ((gmG.getStrikes() == 3) && (gmG.getExtraLives() > 0)) {
+            if (gmG.isExtraLifeUsed() == false) {
+                AlertDialog adAlertBox = new AlertDialog.Builder(this)
+                        .setMessage("You used an extra life for getting three strikes!")
+                        .setPositiveButton("OK", null)
+                        .show();
+                gmG.setExtraLives(gmG.getExtraLives() - 1);
+                usrU.setExtraLives(usrU.getExtraLives() - 1);
+                gmG.setExtraLifeUsed(true);
+            }
+        }
 
-        txtQuestion.setText("This is a sample question");
-        txtQuestionValue.setText(((nQuestionNumber - nStrikes) * 10) + " Points");
+        txtQuestion.setText("This is a sample question.");
+        txtQuestionValue.setText(nQuestionValue + " Points");
         txtScore.setText("Your Score: " + nScore);
         txtTimer.setText("10");
 
@@ -76,6 +103,8 @@ public class QuestionActivity extends Activity {
         // OnClickListener not working and playing well with CountDownTimer
         btnTrue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                mCountDown.cancel();
+                bYourAnswer = true;
                 Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
                 intA.putExtra("YourAnswer", bYourAnswer);
                 intA.putExtra("CorrectAnswer", bCorrectAnswer);
@@ -88,7 +117,9 @@ public class QuestionActivity extends Activity {
 
         btnFalse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+                mCountDown.cancel();
                 Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
+                bYourAnswer = false;
                 intA.putExtra("YourAnswer", bYourAnswer);
                 intA.putExtra("CorrectAnswer", bCorrectAnswer);
                 intA.putExtra("User", usrU);

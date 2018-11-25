@@ -1,6 +1,7 @@
 package com.danielburgnerjr.goodforcedemo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,31 +40,32 @@ public class AnswerActivity extends Activity {
         if (bYourAnswer == bCorrectAnswer) {
             txtAnswerOutcome.setText("Correct!");
             txtAnswerExplanation.setText("This is why your answer is correct.");
-            gmG.setScore(gmG.getScore() + ((gmG.getQuestionNumber() - gmG.getStrikes()) * 10));
-            txtScoreAnswer.setText("Your Score: " + gmG.getScore());
-            txtNumStrikes.setText("Strikes: " + gmG.getStrikes());
+            gmG.setScore(gmG.getScore() + gmG.getQuestionValue());
+            gmG.setStreak(gmG.getStreak() + 1);
+            if (gmG.getStreak() == 10) {
+                usrU.setExtraLives(usrU.getExtraLives() + 1);
+                AlertDialog adAlertBox = new AlertDialog.Builder(this)
+                        .setMessage("You earned an extra life for answering ten questions" +
+                                " in a row correctly!")
+                        .setPositiveButton("OK", null)
+                        .show();
+            }
         } else {
             txtAnswerOutcome.setText("Wrong!");
             txtAnswerExplanation.setText("This is why your answer is wrong.");
             gmG.setStrikes(gmG.getStrikes() + 1);
-            txtScoreAnswer.setText("Your Score: " + gmG.getScore());
-            txtNumStrikes.setText("Strikes: " + gmG.getStrikes());
-            if (gmG.getStrikes() == 3) {
-                if ((gmG.getExtraLives() > 0) && (gmG.isExtraLifeUsed() == false)) {
-                    gmG.setStrikes(gmG.getStrikes() - 1);
-                    gmG.setExtraLives(gmG.getExtraLives() - 1);
-                    usrU.setExtraLives(usrU.getExtraLives() - 1);
-                    gmG.setExtraLifeUsed(true);
-                } else if (gmG.getExtraLives() > 0) {
-                    gmG.setExtraLifeUsed(true);
-                }
-            }
+            gmG.setStreak(0);
         }
+        if ((gmG.getStrikes() == 3) && (gmG.getExtraLives() == 0)) {
+            gmG.setExtraLifeUsed(true);
+        }
+        txtScoreAnswer.setText("Your Score: " + gmG.getScore());
+        txtNumStrikes.setText("Strikes: " + gmG.getStrikes());
         gmG.setQuestionNumber(gmG.getQuestionNumber() + 1);
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if ((gmG.getStrikes() < 3) || (gmG.isExtraLifeUsed() == true)) {
+                if ((gmG.getStrikes() < 3) || (gmG.isExtraLifeUsed() == false)) {
                     Intent intA = new Intent(AnswerActivity.this, QuestionActivity.class);
                     intA.putExtra("User", usrU);
                     intA.putExtra("Game", gmG);

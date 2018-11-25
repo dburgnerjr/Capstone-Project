@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 public class WatchVideoActivity extends AppCompatActivity {
     private Intent intU;
     private User usrU;
+    private Game gmG;
     private Gson gsonG;
     public SharedPreferences preferences;
 
@@ -24,6 +25,9 @@ public class WatchVideoActivity extends AppCompatActivity {
 
         intU = getIntent();
         usrU = (User) intU.getSerializableExtra("User");
+        if (intU.getSerializableExtra("Game") != null) {
+            gmG = (Game) intU.getSerializableExtra("Game");
+        }
         final Button btnContinue = (Button) findViewById(R.id.btnContinue);
         final Button btnMainMenu = (Button) findViewById(R.id.btnMainMenu);
 
@@ -36,6 +40,7 @@ public class WatchVideoActivity extends AppCompatActivity {
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
                 e.commit();
+                intA.putExtra("Game", gmG);
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();

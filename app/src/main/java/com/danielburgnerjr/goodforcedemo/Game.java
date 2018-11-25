@@ -5,9 +5,12 @@ import java.io.Serializable;
 public class Game implements Serializable {
     private int nPlayerNumber;
     private int nQuestionNumber;
+    private int nQuestionValue;
     private int nScore;
     private int nStrikes;
     private int nExtraLives;
+    private int nStreak;
+    private int nMaxStrikes = 3;
     private boolean bExtraLifeUsed;
 
     public void setPlayerNumber(int nPN) {
@@ -26,6 +29,14 @@ public class Game implements Serializable {
         return this.nQuestionNumber;
     }
 
+    public void setQuestionValue(int nQV) {
+        this.nQuestionValue = nQV;
+    }
+
+    public int getQuestionValue() {
+        return this.nQuestionValue;
+    }
+
     public int getScore() {
         return this.nScore;
     }
@@ -40,6 +51,24 @@ public class Game implements Serializable {
 
     public void setStrikes(int nSt) {
         this.nStrikes = nSt;
+    }
+
+    public int getStreak() {
+        return this.nStreak;
+    }
+
+    public void setStreak(int nStr) {
+        this.nStreak = nStr;
+    }
+
+    public int getMaxStrikes() {
+        return this.nMaxStrikes;
+    }
+
+    public void setMaxStrikes(int nEL) {
+        if (nEL > 0) {
+            this.nMaxStrikes = 4;
+        }
     }
 
     public int getExtraLives() {
