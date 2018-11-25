@@ -30,7 +30,6 @@ public class MainActivity extends Activity {
         preferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         gsonG = new Gson();
         strJson = preferences.getString("User", "");
-        Toast.makeText(getApplicationContext(), strJson, Toast.LENGTH_SHORT).show();
 
         usrU = gsonG.fromJson(strJson, User.class);
 

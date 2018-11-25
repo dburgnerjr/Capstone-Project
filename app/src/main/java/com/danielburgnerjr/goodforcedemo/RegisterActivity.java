@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String strZipCode;
     private User usrU;
     private Gson gsonG;
-    public SharedPreferences preferences;   // NPE occurs here
+    public SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
