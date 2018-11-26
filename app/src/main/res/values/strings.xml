@@ -102,6 +102,7 @@
     <string name="inviteFinal">Invite</string>
 
     <string name="watchVideoActivity">Watch a brief video.</string>
+    <string name="interstitial_ad_unit_id">/6499/example/interstitial</string>
     <string name="finalScore">Final Score</string>
     <string name="mainMenu">Main Menu</string>
 
