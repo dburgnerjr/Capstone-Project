@@ -93,7 +93,6 @@
                 android:textSize="18sp" />
 
         </RelativeLayout>
-]
     </ScrollView>
 
 </android.widget.RelativeLayout>
