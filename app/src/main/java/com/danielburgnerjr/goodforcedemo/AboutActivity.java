@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
+
 public class AboutActivity extends AppCompatActivity {
 
-    private Intent intU;
+    Intent intU;
     private User usrU;
 
     @Override

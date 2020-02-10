@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
+
 public class GameStartActivity extends Activity {
 
     private Intent intU;

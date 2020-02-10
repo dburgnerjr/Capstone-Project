@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
+
 
 public class LogoutActivity extends AppCompatActivity {
     public SharedPreferences preferences;

@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.danielburgnerjr.goodforcedemo.model.Game;
+import com.danielburgnerjr.goodforcedemo.model.User;
+
 import java.util.Random;
 
 public class QuestionActivity extends Activity {

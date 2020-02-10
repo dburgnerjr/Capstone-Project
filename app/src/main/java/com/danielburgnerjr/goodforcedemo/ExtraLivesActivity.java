@@ -9,11 +9,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
 import com.google.gson.Gson;
 
 public class ExtraLivesActivity extends AppCompatActivity {
 
-    private Intent intU;
+    Intent intU;
     private User usrU;
     private Gson gsonG;
     public SharedPreferences preferences;
@@ -26,12 +27,12 @@ public class ExtraLivesActivity extends AppCompatActivity {
         usrU = (User) intU.getSerializableExtra("User");
         preferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 
-        final Button btnOneExtraLife = (Button) findViewById(R.id.btnOneExtraLife);
-        final Button btnTwoExtraLives = (Button) findViewById(R.id.btnTwoExtraLives);
-        final Button btnThreeExtraLives = (Button) findViewById(R.id.btnThreeExtraLives);
-        final Button btnFourExtraLives = (Button) findViewById(R.id.btnFourExtraLives);
-        final Button btnFiveExtraLives = (Button) findViewById(R.id.btnFiveExtraLives);
-        final Button btnTenExtraLives = (Button) findViewById(R.id.btnTenExtraLives);
+        final Button btnOneExtraLife = findViewById(R.id.btnOneExtraLife);
+        final Button btnTwoExtraLives = findViewById(R.id.btnTwoExtraLives);
+        final Button btnThreeExtraLives = findViewById(R.id.btnThreeExtraLives);
+        final Button btnFourExtraLives = findViewById(R.id.btnFourExtraLives);
+        final Button btnFiveExtraLives = findViewById(R.id.btnFiveExtraLives);
+        final Button btnTenExtraLives = findViewById(R.id.btnTenExtraLives);
 
         btnOneExtraLife.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -42,11 +43,10 @@ public class ExtraLivesActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnTwoExtraLives.setOnClickListener(new View.OnClickListener() {
@@ -58,11 +58,10 @@ public class ExtraLivesActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnThreeExtraLives.setOnClickListener(new View.OnClickListener() {
@@ -74,11 +73,10 @@ public class ExtraLivesActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnFourExtraLives.setOnClickListener(new View.OnClickListener() {
@@ -90,11 +88,10 @@ public class ExtraLivesActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnFiveExtraLives.setOnClickListener(new View.OnClickListener() {
@@ -106,11 +103,10 @@ public class ExtraLivesActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnTenExtraLives.setOnClickListener(new View.OnClickListener() {
@@ -122,14 +118,12 @@ public class ExtraLivesActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {

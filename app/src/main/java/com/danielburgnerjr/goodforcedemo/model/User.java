@@ -1,4 +1,4 @@
-package com.danielburgnerjr.goodforcedemo;
+package com.danielburgnerjr.goodforcedemo.model;
 
 import java.io.Serializable;
 

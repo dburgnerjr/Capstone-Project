@@ -9,8 +9,8 @@ import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
 import com.google.gson.Gson;
 
 public class MainActivity extends Activity {

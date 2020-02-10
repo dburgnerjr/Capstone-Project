@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
+
 public class TellFriendActivity extends AppCompatActivity {
 
     private TextView txtGoodForceCode;

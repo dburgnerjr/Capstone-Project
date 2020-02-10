@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
 import com.google.gson.Gson;
 
 public class LoginActivity extends AppCompatActivity {

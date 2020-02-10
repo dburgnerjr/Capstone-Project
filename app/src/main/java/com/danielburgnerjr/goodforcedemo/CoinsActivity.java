@@ -9,11 +9,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.danielburgnerjr.goodforcedemo.model.User;
 import com.google.gson.Gson;
 
 public class CoinsActivity extends AppCompatActivity {
 
-    private Intent intU;
+    Intent intU;
     private User usrU;
     private Gson gsonG;
     public SharedPreferences preferences;
@@ -26,12 +27,12 @@ public class CoinsActivity extends AppCompatActivity {
         usrU = (User) intU.getSerializableExtra("User");
         preferences = getSharedPreferences("default", Context.MODE_PRIVATE);
 
-        final Button btnOneCoin = (Button) findViewById(R.id.btnOneCoin);
-        final Button btnFiveCoins = (Button) findViewById(R.id.btnFiveCoins);
-        final Button btnTenCoins = (Button) findViewById(R.id.btnTenCoins);
-        final Button btnTwentyCoins = (Button) findViewById(R.id.btnTwentyCoins);
-        final Button btnFiftyCoins = (Button) findViewById(R.id.btnFiftyCoins);
-        final Button btn100Coins = (Button) findViewById(R.id.btn100Coins);
+        final Button btnOneCoin = findViewById(R.id.btnOneCoin);
+        final Button btnFiveCoins = findViewById(R.id.btnFiveCoins);
+        final Button btnTenCoins = findViewById(R.id.btnTenCoins);
+        final Button btnTwentyCoins = findViewById(R.id.btnTwentyCoins);
+        final Button btnFiftyCoins = findViewById(R.id.btnFiftyCoins);
+        final Button btn100Coins = findViewById(R.id.btn100Coins);
 
         btnOneCoin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -42,11 +43,10 @@ public class CoinsActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnFiveCoins.setOnClickListener(new View.OnClickListener() {
@@ -58,11 +58,10 @@ public class CoinsActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnTenCoins.setOnClickListener(new View.OnClickListener() {
@@ -74,11 +73,10 @@ public class CoinsActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnTwentyCoins.setOnClickListener(new View.OnClickListener() {
@@ -90,11 +88,10 @@ public class CoinsActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnFiftyCoins.setOnClickListener(new View.OnClickListener() {
@@ -106,11 +103,10 @@ public class CoinsActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btn100Coins.setOnClickListener(new View.OnClickListener() {
@@ -122,14 +118,12 @@ public class CoinsActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {

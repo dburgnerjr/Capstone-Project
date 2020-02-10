@@ -8,29 +8,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.danielburgnerjr.goodforcedemo.model.Game;
+import com.danielburgnerjr.goodforcedemo.model.User;
+
 public class AnswerActivity extends Activity {
-    private Intent intQ;
+    Intent intQ;
     private User usrU;
     private Game gmG;
 
-    private TextView txtAnswerOutcome;
-    private TextView txtAnswerExplanation;
-    private TextView txtScoreAnswer;
-    private TextView txtNumStrikes;
-    private boolean bYourAnswer;
-    private boolean bCorrectAnswer;
+    TextView txtAnswerOutcome;
+    TextView txtAnswerExplanation;
+    TextView txtScoreAnswer;
+    TextView txtNumStrikes;
+    boolean bYourAnswer;
+    boolean bCorrectAnswer;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);
-        txtAnswerOutcome = (TextView) findViewById(R.id.txtAnswerOutcome);
-        txtAnswerExplanation = (TextView) findViewById(R.id.txtAnswerExplanation);
-        txtScoreAnswer = (TextView) findViewById(R.id.txtScoreAnswer);
-        txtNumStrikes = (TextView) findViewById(R.id.txtNumStrikes);
+        txtAnswerOutcome = findViewById(R.id.txtAnswerOutcome);
+        txtAnswerExplanation = findViewById(R.id.txtAnswerExplanation);
+        txtScoreAnswer = findViewById(R.id.txtScoreAnswer);
+        txtNumStrikes = findViewById(R.id.txtNumStrikes);
 
-        final Button btnContinue = (Button) findViewById(R.id.btnContinue);
+        final Button btnContinue = findViewById(R.id.btnContinue);
 
         intQ = getIntent();
         usrU = (User) intQ.getSerializableExtra("User");
@@ -65,7 +68,7 @@ public class AnswerActivity extends Activity {
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if ((gmG.getStrikes() < 3) || (gmG.isExtraLifeUsed() == false)) {
+                if ((gmG.getStrikes() < 3) || (!gmG.isExtraLifeUsed())) {
                     Intent intA = new Intent(AnswerActivity.this, QuestionActivity.class);
                     intA.putExtra("User", usrU);
                     intA.putExtra("Game", gmG);
@@ -78,9 +81,7 @@ public class AnswerActivity extends Activity {
                     startActivity(intA);
                     finish();
                 }
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }
