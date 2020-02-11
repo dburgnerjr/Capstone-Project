@@ -18,7 +18,7 @@ import com.google.gson.Gson;
 import com.google.android.gms.ads.MobileAds;
 
 public class WatchVideoActivity extends AppCompatActivity implements RewardedVideoAdListener {
-    private Intent intU;
+    Intent intU;
     private User usrU;
     private Game gmG;
     private Gson gsonG;
@@ -42,8 +42,8 @@ public class WatchVideoActivity extends AppCompatActivity implements RewardedVid
         if (intU.getSerializableExtra("Game") != null) {
             gmG = (Game) intU.getSerializableExtra("Game");
         }
-        final Button btnContinue = (Button) findViewById(R.id.btnContinue);
-        final Button btnMainMenu = (Button) findViewById(R.id.btnMainMenu);
+        final Button btnContinue = findViewById(R.id.btnContinue);
+        final Button btnMainMenu = findViewById(R.id.btnMainMenu);
 
         btnContinue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -53,12 +53,11 @@ public class WatchVideoActivity extends AppCompatActivity implements RewardedVid
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("Game", gmG);
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnMainMenu.setOnClickListener(new View.OnClickListener() {
@@ -69,14 +68,12 @@ public class WatchVideoActivity extends AppCompatActivity implements RewardedVid
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     private void loadRewardedVideoAd() {

@@ -19,9 +19,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtEmailAddress;
     private EditText edtPassword;
     private Button btnLogin;
-    private Button btnForgotPW;
+    Button btnForgotPW;
     private int nAttempts = 3;
-    private Intent intU;
+    Intent intU;
     private User usrU;
     public SharedPreferences preferences;
     private String strJson;
@@ -43,10 +43,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginButton() {
-        edtEmailAddress = (EditText) findViewById(R.id.edtEmailAddress);
-        edtPassword = (EditText) findViewById(R.id.edtPassword);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnForgotPW = (Button) findViewById(R.id.btnForgotPW);
+        edtEmailAddress = findViewById(R.id.edtEmailAddress);
+        edtPassword = findViewById(R.id.edtPassword);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnForgotPW = findViewById(R.id.btnForgotPW);
 
         intU = getIntent();
         if (usrU == null) {
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                                 SharedPreferences.Editor e = preferences.edit();
                                 strJson = gsonG.toJson(usrU);
                                 e.putString("User", strJson);
-                                e.commit();
+                                e.apply();
                             }
                             Intent intent = new Intent(LoginActivity.this, GameStartActivity.class);
                             intent.putExtra("User", usrU);
@@ -99,5 +99,4 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
 }

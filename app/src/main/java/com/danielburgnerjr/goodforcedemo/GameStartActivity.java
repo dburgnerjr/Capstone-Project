@@ -11,25 +11,25 @@ import com.danielburgnerjr.goodforcedemo.model.User;
 
 public class GameStartActivity extends Activity {
 
-    private Intent intU;
+    Intent intU;
     private User usrU;
-    private TextView txtPlayerId;
+    TextView txtPlayerId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_start);
 
-        txtPlayerId = (TextView) findViewById(R.id.txtPlayerId);
-        final Button btnPlay = (Button) findViewById(R.id.btnPlay);
-        final Button btnGameRules = (Button) findViewById(R.id.btnGameRules);
-        final Button btnExtraLives = (Button) findViewById(R.id.btnExtraLives);
-        final Button btnWatchVideo = (Button) findViewById(R.id.btnWatchVideo);
-        final Button btnGoodForceCoins = (Button) findViewById(R.id.btnGoodForceCoins);
-        final Button btnInvite = (Button) findViewById(R.id.btnInvite);
-        final Button btnGFPoints = (Button) findViewById(R.id.btnGFPoints);
-        final Button btnAbout = (Button) findViewById(R.id.btnAbout);
-        final Button btnLogout = (Button) findViewById(R.id.btnLogout);
+        txtPlayerId = findViewById(R.id.txtPlayerId);
+        final Button btnPlay = findViewById(R.id.btnPlay);
+        final Button btnGameRules = findViewById(R.id.btnGameRules);
+        final Button btnExtraLives = findViewById(R.id.btnExtraLives);
+        final Button btnWatchVideo = findViewById(R.id.btnWatchVideo);
+        final Button btnGoodForceCoins = findViewById(R.id.btnGoodForceCoins);
+        final Button btnInvite = findViewById(R.id.btnInvite);
+        final Button btnGFPoints = findViewById(R.id.btnGFPoints);
+        final Button btnAbout = findViewById(R.id.btnAbout);
+        final Button btnLogout = findViewById(R.id.btnLogout);
         intU = getIntent();
         usrU = (User) intU.getSerializableExtra("User");
         if (usrU == null) {
@@ -57,7 +57,6 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnGameRules.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +64,6 @@ public class GameStartActivity extends Activity {
                 Intent intA = new Intent(GameStartActivity.this, GameRulesActivity.class);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnExtraLives.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +72,6 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnWatchVideo.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +80,6 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnGoodForceCoins.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +88,6 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnInvite.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +96,6 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnGFPoints.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +104,6 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnAbout.setOnClickListener(new View.OnClickListener() {
@@ -119,7 +112,6 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -128,10 +120,7 @@ public class GameStartActivity extends Activity {
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 }

@@ -15,15 +15,15 @@ import com.google.gson.Gson;
 
 public class MainActivity extends Activity {
     public SharedPreferences preferences;
-    private String strJson;
-    private Gson gsonG;
+    String strJson;
+    Gson gsonG;
     private User usrU;
-    private Intent intU;
+    Intent intU;
     private Button btnBegin;
     private Button btnLogin;
     private Button btnRegister;
 
-    private static int SPLASH_TIME_OUT = 5000;
+    static int SPLASH_TIME_OUT = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +36,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnBegin = (Button) findViewById(R.id.btnBegin);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnRegister = (Button) findViewById(R.id.btnRegister);
+        btnBegin = findViewById(R.id.btnBegin);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnRegister = findViewById(R.id.btnRegister);
 
         if (usrU != null) {
             startGameActivity(usrU);
@@ -52,7 +52,6 @@ public class MainActivity extends Activity {
                 Intent intA = new Intent(MainActivity.this, GameStartActivity.class);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnLogin.setOnClickListener(new OnClickListener() {
@@ -60,14 +59,12 @@ public class MainActivity extends Activity {
                 Intent intA = new Intent(MainActivity.this, LoginActivity.class);
                 intA.putExtra("User", usrU);
                 startActivity(intA);
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
         btnRegister.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 Intent intA = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intA);
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -10,8 +10,8 @@ import com.danielburgnerjr.goodforcedemo.model.User;
 
 public class TellFriendActivity extends AppCompatActivity {
 
-    private TextView txtGoodForceCode;
-    private Intent intQ;
+    TextView txtGoodForceCode;
+    Intent intQ;
     private User usrU;
 
     @Override
@@ -19,13 +19,12 @@ public class TellFriendActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tell_friend);
 
-        txtGoodForceCode = (TextView) findViewById(R.id.txtGoodForceCode);
+        txtGoodForceCode = findViewById(R.id.txtGoodForceCode);
 
         intQ = getIntent();
         usrU = (User) intQ.getSerializableExtra("User");
 
         txtGoodForceCode.setText("GoodForce Code: " + usrU.getGoodForceCode());
-
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {

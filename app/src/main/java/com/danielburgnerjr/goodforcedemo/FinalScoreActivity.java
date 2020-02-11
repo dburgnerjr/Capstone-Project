@@ -15,11 +15,11 @@ import com.google.gson.Gson;
 
 public class FinalScoreActivity extends AppCompatActivity {
 
-    private Intent intU;
+    Intent intU;
     private User usrU;
-    private Game gmG;
+    Game gmG;
     private Gson gsonG;
-    private TextView txtYourScore;
+    TextView txtYourScore;
     public SharedPreferences preferences;
 
     @Override
@@ -30,10 +30,10 @@ public class FinalScoreActivity extends AppCompatActivity {
         usrU = (User) intU.getSerializableExtra("User");
         gmG = (Game) intU.getSerializableExtra("Game");
         preferences = getSharedPreferences("default", Context.MODE_PRIVATE);
-        txtYourScore = (TextView) findViewById(R.id.txtYourScore);
+        txtYourScore = findViewById(R.id.txtYourScore);
         txtYourScore.setText("" + gmG.getScore());
 
-        final Button btnPlayAgain = (Button) findViewById(R.id.btnPlayAgain);
+        final Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
 
         btnPlayAgain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -43,11 +43,10 @@ public class FinalScoreActivity extends AppCompatActivity {
                 gsonG = new Gson();
                 String strJson = gsonG.toJson(usrU);
                 e.putString("User", strJson);
-                e.commit();
+                e.apply();
                 intA.putExtra("User", usrU);
                 startActivity(intA);
                 finish();
-                //Toast.makeText(getApplicationContext(), "How To Play", Toast.LENGTH_SHORT).show();
             }
         });
 

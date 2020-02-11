@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText edtPassword;
     private EditText edtConfirmPassword;
     private EditText edtZipCode;
-    private Button btnRegister;
+    Button btnRegister;
     private String strFirstName;
     private String strLastName;
     private String strUsername;
@@ -51,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean bDataCheck = checkDataEntered();
-                if (bDataCheck == true) {
+                if (bDataCheck) {
                     usrU = new User();
                     strFirstName = edtFirstName.getText().toString();
                     usrU.setFirstName(strFirstName);
@@ -73,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                     gsonG = new Gson();
                     String strJson = gsonG.toJson(usrU);
                     e.putString("User", strJson);
-                    e.commit();
+                    e.apply();
                     intent.putExtra("User", usrU);
                     startActivity(intent);
                     finish();
@@ -107,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast tT = Toast.makeText(this, "You must enter a last name to register!", Toast.LENGTH_SHORT);
             tT.show();
             return false;
-        } else if (isEmail(edtEmailAddress) == false) {
+        } else if (!isEmail(edtEmailAddress)) {
             Toast tT = Toast.makeText(this, "You must enter a valid email address!", Toast.LENGTH_SHORT);
             tT.show();
             return false;

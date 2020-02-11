@@ -12,26 +12,24 @@ import android.widget.Toast;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    private EditText edtEmailAddressPW;
-    private Button btnResetPW;
-    private Button btnBackLogin;
+    EditText edtEmailAddressPW;
+    Button btnResetPW;
+    Button btnBackLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
-        edtEmailAddressPW = (EditText)findViewById(R.id.edtEmailAddressPW);
-        btnResetPW = (Button)findViewById(R.id.btnResetPW);
-        btnBackLogin = (Button)findViewById(R.id.btnBackLogin);
+        edtEmailAddressPW = findViewById(R.id.edtEmailAddressPW);
+        btnResetPW = findViewById(R.id.btnResetPW);
+        btnBackLogin = findViewById(R.id.btnBackLogin);
 
         final String strEmailAddressPW = edtEmailAddressPW.getText().toString();
         btnResetPW.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String[] TO = {strEmailAddressPW};
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                emailIntent.setData(Uri.parse("mailto:"));
-                emailIntent.setType("text/plain");
-
+                emailIntent.setDataAndType(Uri.parse("mailto:"), "text/plain");
 
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "GoodForceDemo Forgot Password");

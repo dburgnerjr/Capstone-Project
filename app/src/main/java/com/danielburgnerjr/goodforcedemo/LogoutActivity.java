@@ -13,8 +13,8 @@ import com.danielburgnerjr.goodforcedemo.model.User;
 public class LogoutActivity extends AppCompatActivity {
     public SharedPreferences preferences;
 
-    private static int SPLASH_TIME_OUT = 5000;
-    private Intent intU;
+    static int SPLASH_TIME_OUT = 5000;
+    Intent intU;
     private User usrU;
 
     @Override
@@ -27,7 +27,7 @@ public class LogoutActivity extends AppCompatActivity {
 
         SharedPreferences.Editor e = preferences.edit();
         e.clear();
-        e.commit();
+        e.apply();
 
         new Handler().postDelayed(new Runnable() {
 
