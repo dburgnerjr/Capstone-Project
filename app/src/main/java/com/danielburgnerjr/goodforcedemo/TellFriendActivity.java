@@ -23,8 +23,11 @@ public class TellFriendActivity extends AppCompatActivity {
 
         intQ = getIntent();
         usrU = (User) intQ.getSerializableExtra("User");
+        String strGoodForceCode = "GoodForce Code: ";
+        if (usrU != null)
+            strGoodForceCode += usrU.getGoodForceCode();
 
-        txtGoodForceCode.setText("GoodForce Code: " + usrU.getGoodForceCode());
+        txtGoodForceCode.setText(strGoodForceCode);
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {

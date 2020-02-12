@@ -49,11 +49,12 @@ public class LoginActivity extends AppCompatActivity {
         btnForgotPW = findViewById(R.id.btnForgotPW);
 
         intU = getIntent();
-        if (usrU == null) {
+        if (usrU == null)
             usrU = (User) intU.getSerializableExtra("User");
+        if (usrU != null) {
+            strUsername = usrU.getEmailAddress();
+            strPassword = usrU.getPassword();
         }
-        strUsername = usrU.getEmailAddress();
-        strPassword = usrU.getPassword();
         btnLogin.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -97,6 +98,5 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }

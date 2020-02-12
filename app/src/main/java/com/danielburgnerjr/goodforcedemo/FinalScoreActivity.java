@@ -31,7 +31,7 @@ public class FinalScoreActivity extends AppCompatActivity {
         gmG = (Game) intU.getSerializableExtra("Game");
         preferences = getSharedPreferences("default", Context.MODE_PRIVATE);
         txtYourScore = findViewById(R.id.txtYourScore);
-        txtYourScore.setText("" + gmG.getScore());
+        txtYourScore.setText(gmG.getScore());
 
         final Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
 

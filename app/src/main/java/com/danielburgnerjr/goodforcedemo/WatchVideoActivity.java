@@ -82,12 +82,13 @@ public class WatchVideoActivity extends AppCompatActivity implements RewardedVid
         }
     }
 
+/*
     private void startVideoAd(View view) {
         if (rvaVideoAd.isLoaded()) {
             rvaVideoAd.show();
         }
-
     }
+*/
 
     @Override
     public void onRewardedVideoAdLoaded() {

@@ -2,6 +2,7 @@ package com.danielburgnerjr.goodforcedemo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -47,11 +48,14 @@ public class AnswerActivity extends Activity {
             gmG.setStreak(gmG.getStreak() + 1);
             if (gmG.getStreak() == 10) {
                 usrU.setExtraLives(usrU.getExtraLives() + 1);
-                AlertDialog adAlertBox = new AlertDialog.Builder(this)
-                        .setMessage("You earned an extra life for answering ten questions" +
-                                " in a row correctly!")
-                        .setPositiveButton("OK", null)
-                        .show();
+                AlertDialog adAlertBox = new AlertDialog.Builder(this).create();
+                adAlertBox.setMessage("You earned an extra life for answering ten questions in a row correctly!");
+                adAlertBox.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface arg0, int arg1) {
+                            }
+                        });
+                adAlertBox.show();
             }
         } else {
             txtAnswerOutcome.setText("Wrong!");

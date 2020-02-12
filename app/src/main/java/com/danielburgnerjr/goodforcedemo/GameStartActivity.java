@@ -45,7 +45,7 @@ public class GameStartActivity extends Activity {
             btnWatchVideo.setEnabled(false);
             btnLogout.setEnabled(false);
         } else {
-            txtPlayerId.setText("Welcome " + usrU.getFirstName() + ", #" + usrU.getPlayerNumber());
+            txtPlayerId.setText("Welcome " + usrU.getFirstName() + " " + usrU.getLastName() + ", #" + usrU.getPlayerNumber());
             btnExtraLives.setText("Extra Lives: " + usrU.getExtraLives());
             btnGoodForceCoins.setText("Coins: " + usrU.getCoins());
             btnGFPoints.setText("Points: " + usrU.getGFPoints());
