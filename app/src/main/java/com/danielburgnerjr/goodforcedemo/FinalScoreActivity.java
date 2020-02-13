@@ -35,20 +35,17 @@ public class FinalScoreActivity extends AppCompatActivity {
 
         final Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
 
-        btnPlayAgain.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(FinalScoreActivity.this, GameStartActivity.class);
-                usrU.setGFPoints(usrU.getGFPoints() + 100);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnPlayAgain.setOnClickListener((View view) -> {
+            Intent intA = new Intent(FinalScoreActivity.this, GameStartActivity.class);
+            usrU.setGFPoints(usrU.getGFPoints() + 100);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-
     }
 }
