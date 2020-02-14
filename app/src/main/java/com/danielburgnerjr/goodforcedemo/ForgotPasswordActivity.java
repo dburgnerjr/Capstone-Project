@@ -25,35 +25,31 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         btnBackLogin = findViewById(R.id.btnBackLogin);
 
         final String strEmailAddressPW = edtEmailAddressPW.getText().toString();
-        btnResetPW.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                String[] TO = {strEmailAddressPW};
-                Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                emailIntent.setDataAndType(Uri.parse("mailto:"), "text/plain");
+        btnResetPW.setOnClickListener((View view) -> {
+            String[] TO = {strEmailAddressPW};
+            Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setDataAndType(Uri.parse("mailto:"), "text/plain");
 
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "GoodForceDemo Forgot Password");
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "Your email address is: " + strEmailAddressPW);
-                emailIntent.putExtra(Intent.EXTRA_TEXT, "Your new password is: lilyvang0rd3r");
+            emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "GoodForceDemo Forgot Password");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Your email address is: " + strEmailAddressPW);
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Your new password is: lilyvang0rd3r");
 
-                try {
-                    startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-                    Log.i("Finished sending email.", "");
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(ForgotPasswordActivity.this,
-                            "There is no email client installed.", Toast.LENGTH_SHORT).show();
-                }
-                Toast.makeText(ForgotPasswordActivity.this, "Email will be sent to email address on file.",
-                        Toast.LENGTH_SHORT).show();
+            try {
+                startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+                Log.i("Finished sending email.", "");
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(ForgotPasswordActivity.this,
+                        "There is no email client installed.", Toast.LENGTH_SHORT).show();
             }
+            Toast.makeText(ForgotPasswordActivity.this, "Email will be sent to email address on file.",
+                    Toast.LENGTH_SHORT).show();
         });
 
-        btnBackLogin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
-                startActivity(intA);
-                finish();
-            }
+        btnBackLogin.setOnClickListener((View view) -> {
+            Intent intA = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
+            startActivity(intA);
+            finish();
         });
 
     }

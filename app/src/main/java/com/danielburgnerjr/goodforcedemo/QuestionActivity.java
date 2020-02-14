@@ -87,11 +87,8 @@ public class QuestionActivity extends Activity {
             if (!gmG.isExtraLifeUsed()) {
                 AlertDialog adAlertBox = new AlertDialog.Builder(this).create();
                 adAlertBox.setMessage("You used an extra life for getting three strikes!");
-                adAlertBox.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface arg0, int arg1) {
-                            }
-                        });
+                adAlertBox.setButton(AlertDialog.BUTTON_POSITIVE, "OK", (DialogInterface arg0, int arg1) -> {
+                });
                 adAlertBox.show();
                 gmG.setExtraLives(gmG.getExtraLives() - 1);
                 usrU.setExtraLives(usrU.getExtraLives() - 1);
@@ -109,32 +106,28 @@ public class QuestionActivity extends Activity {
         bCorrectAnswer = randomno.nextBoolean();
 
         // OnClickListener not working and playing well with CountDownTimer
-        btnTrue.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                mCountDown.cancel();
-                bYourAnswer = true;
-                Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
-                intA.putExtra("YourAnswer", bYourAnswer);
-                intA.putExtra("CorrectAnswer", bCorrectAnswer);
-                intA.putExtra("User", usrU);
-                intA.putExtra("Game", gmG);
-                startActivity(intA);
-                finish();
-            }
+        btnTrue.setOnClickListener((View view) -> {
+            mCountDown.cancel();
+            bYourAnswer = true;
+            Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
+            intA.putExtra("YourAnswer", bYourAnswer);
+            intA.putExtra("CorrectAnswer", bCorrectAnswer);
+            intA.putExtra("User", usrU);
+            intA.putExtra("Game", gmG);
+            startActivity(intA);
+            finish();
         });
 
-        btnFalse.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                mCountDown.cancel();
-                Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
-                bYourAnswer = false;
-                intA.putExtra("YourAnswer", bYourAnswer);
-                intA.putExtra("CorrectAnswer", bCorrectAnswer);
-                intA.putExtra("User", usrU);
-                intA.putExtra("Game", gmG);
-                startActivity(intA);
-                finish();
-            }
+        btnFalse.setOnClickListener((View view) -> {
+            mCountDown.cancel();
+            Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
+            //bYourAnswer = false;
+            intA.putExtra("YourAnswer", bYourAnswer);
+            intA.putExtra("CorrectAnswer", bCorrectAnswer);
+            intA.putExtra("User", usrU);
+            intA.putExtra("Game", gmG);
+            startActivity(intA);
+            finish();
         });
 
         mCountDown = new CountDownTimer(10000, 1000) {

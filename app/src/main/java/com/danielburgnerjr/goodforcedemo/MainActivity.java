@@ -47,25 +47,19 @@ public class MainActivity extends Activity {
             usrU = (User) intU.getSerializableExtra("User");
         }
 
-        btnBegin.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(MainActivity.this, GameStartActivity.class);
-                startActivity(intA);
-                finish();
-            }
+        btnBegin.setOnClickListener((View view) -> {
+            Intent intA = new Intent(MainActivity.this, GameStartActivity.class);
+            startActivity(intA);
+            finish();
         });
-        btnLogin.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(MainActivity.this, LoginActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-            }
+        btnLogin.setOnClickListener((View view) -> {
+            Intent intA = new Intent(MainActivity.this, LoginActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
         });
-        btnRegister.setOnClickListener(new OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(MainActivity.this, RegisterActivity.class);
-                startActivity(intA);
-            }
+        btnRegister.setOnClickListener((View view) -> {
+            Intent intA = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intA);
         });
     }
 

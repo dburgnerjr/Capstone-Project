@@ -56,47 +56,41 @@ public class LoginActivity extends AppCompatActivity {
             strPassword = usrU.getPassword();
         }
         btnLogin.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (edtEmailAddress.getText().toString().equals(strUsername) && edtPassword.getText().toString().equals(strPassword)) {
-                            Toast.makeText(LoginActivity.this, "User and Password is correct",
-                                    Toast.LENGTH_SHORT).show();
-                            if (strJson.trim().equals("")) {
-                                SharedPreferences.Editor e = preferences.edit();
-                                strJson = gsonG.toJson(usrU);
-                                e.putString("User", strJson);
-                                e.apply();
-                            }
-                            Intent intent = new Intent(LoginActivity.this, GameStartActivity.class);
-                            intent.putExtra("User", usrU);
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            Toast.makeText(LoginActivity.this, "User and Password is not correct",
-                                    Toast.LENGTH_SHORT).show();
-                            Toast.makeText(LoginActivity.this, "Username is" + strUsername,
-                                    Toast.LENGTH_SHORT).show();
-                            Toast.makeText(LoginActivity.this, "Password is" + strPassword,
-                                    Toast.LENGTH_SHORT).show();
-                            nAttempts--;
-                            if (nAttempts == 0) {
-                                Toast.makeText(LoginActivity.this, "Please reset your password to continue",
-                                        Toast.LENGTH_SHORT).show();
-                                btnLogin.setEnabled(false);
-                            }
+                (View v) -> {
+                    if (edtEmailAddress.getText().toString().equals(strUsername) && edtPassword.getText().toString().equals(strPassword)) {
+                        Toast.makeText(LoginActivity.this, "User and Password is correct",
+                                Toast.LENGTH_SHORT).show();
+                        if (strJson.trim().equals("")) {
+                            SharedPreferences.Editor e = preferences.edit();
+                            strJson = gsonG.toJson(usrU);
+                            e.putString("User", strJson);
+                            e.apply();
                         }
-
+                        Intent intent = new Intent(LoginActivity.this, GameStartActivity.class);
+                        intent.putExtra("User", usrU);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "User and Password is not correct",
+                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Username is" + strUsername,
+                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Password is" + strPassword,
+                                Toast.LENGTH_SHORT).show();
+                        nAttempts--;
+                        if (nAttempts == 0) {
+                            Toast.makeText(LoginActivity.this, "Please reset your password to continue",
+                                    Toast.LENGTH_SHORT).show();
+                            btnLogin.setEnabled(false);
+                        }
                     }
                 }
         );
 
-        btnForgotPW.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
-                startActivity(intA);
-                finish();
-            }
+        btnForgotPW.setOnClickListener((View view) ->{
+            Intent intA = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+            startActivity(intA);
+            finish();
         });
     }
 }

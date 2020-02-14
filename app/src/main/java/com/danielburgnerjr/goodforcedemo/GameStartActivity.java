@@ -51,76 +51,58 @@ public class GameStartActivity extends Activity {
             btnGFPoints.setText("Points: " + usrU.getGFPoints());
         }
 
-        btnPlay.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, QuestionActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnPlay.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, QuestionActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnGameRules.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, GameRulesActivity.class);
-                startActivity(intA);
-                finish();
-            }
+        btnGameRules.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, GameRulesActivity.class);
+            startActivity(intA);
+            finish();
         });
-        btnExtraLives.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, ExtraLivesActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnExtraLives.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, ExtraLivesActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnWatchVideo.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, WatchVideoActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnWatchVideo.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, WatchVideoActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnGoodForceCoins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, CoinsActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnGoodForceCoins.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, CoinsActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnInvite.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, TellFriendActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnInvite.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, TellFriendActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnGFPoints.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, PointsActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnGFPoints.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, PointsActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnAbout.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, AboutActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnAbout.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, AboutActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(GameStartActivity.this, LogoutActivity.class);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnLogout.setOnClickListener((View view) -> {
+            Intent intA = new Intent(GameStartActivity.this, LogoutActivity.class);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
     }
 }

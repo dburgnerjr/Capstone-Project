@@ -34,95 +34,83 @@ public class ExtraLivesActivity extends AppCompatActivity {
         final Button btnFiveExtraLives = findViewById(R.id.btnFiveExtraLives);
         final Button btnTenExtraLives = findViewById(R.id.btnTenExtraLives);
 
-        btnOneExtraLife.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
-                usrU.setExtraLives(usrU.getExtraLives() + 1);
-                usrU.setGFPoints(usrU.getGFPoints() + 500);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnOneExtraLife.setOnClickListener((View view) -> {
+            Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
+            usrU.setExtraLives(usrU.getExtraLives() + 1);
+            usrU.setGFPoints(usrU.getGFPoints() + 500);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnTwoExtraLives.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
-                usrU.setExtraLives(usrU.getExtraLives() + 2);
-                usrU.setGFPoints(usrU.getGFPoints() + 1000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnTwoExtraLives.setOnClickListener((View view) -> {
+            Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
+            usrU.setExtraLives(usrU.getExtraLives() + 2);
+            usrU.setGFPoints(usrU.getGFPoints() + 1000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnThreeExtraLives.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
-                usrU.setExtraLives(usrU.getExtraLives() + 3);
-                usrU.setGFPoints(usrU.getGFPoints() + 1500);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnThreeExtraLives.setOnClickListener((View view) -> {
+            Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
+            usrU.setExtraLives(usrU.getExtraLives() + 3);
+            usrU.setGFPoints(usrU.getGFPoints() + 1500);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnFourExtraLives.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
-                usrU.setExtraLives(usrU.getExtraLives() + 4);
-                usrU.setGFPoints(usrU.getGFPoints() + 2000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnFourExtraLives.setOnClickListener((View view) -> {
+            Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
+            usrU.setExtraLives(usrU.getExtraLives() + 4);
+            usrU.setGFPoints(usrU.getGFPoints() + 2000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnFiveExtraLives.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
-                usrU.setExtraLives(usrU.getExtraLives() + 5);
-                usrU.setGFPoints(usrU.getGFPoints() + 2500);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnFiveExtraLives.setOnClickListener((View view) -> {
+            Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
+            usrU.setExtraLives(usrU.getExtraLives() + 5);
+            usrU.setGFPoints(usrU.getGFPoints() + 2500);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnTenExtraLives.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
-                usrU.setExtraLives(usrU.getExtraLives() + 10);
-                usrU.setGFPoints(usrU.getGFPoints() + 5000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnTenExtraLives.setOnClickListener((View view) -> {
+            Intent intA = new Intent(ExtraLivesActivity.this, GameStartActivity.class);
+            usrU.setExtraLives(usrU.getExtraLives() + 10);
+            usrU.setGFPoints(usrU.getGFPoints() + 5000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
     }
 

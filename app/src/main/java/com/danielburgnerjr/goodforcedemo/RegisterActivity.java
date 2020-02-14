@@ -47,37 +47,34 @@ public class RegisterActivity extends AppCompatActivity {
         edtZipCode = findViewById(R.id.edtZipCode);
         btnRegister = findViewById(R.id.btnRegister);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean bDataCheck = checkDataEntered();
-                if (bDataCheck) {
-                    usrU = new User();
-                    strFirstName = edtFirstName.getText().toString();
-                    usrU.setFirstName(strFirstName);
-                    strLastName = edtLastName.getText().toString();
-                    usrU.setLastName(strLastName);
-                    strUsername = edtEmailAddress.getText().toString();
-                    usrU.setEmailAddress(strUsername);
-                    strPassword = edtPassword.getText().toString();
-                    usrU.setPassword(strPassword);
-                    strZipCode = edtZipCode.getText().toString();
-                    usrU.setZipCode(strZipCode);
-                    usrU.setPlayerNumber(1);
-                    usrU.setCoins(2);
-                    usrU.setExtraLives(2);
-                    usrU.setGFPoints(100);
-                    usrU.setGoodForceCode("DB105244");
-                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                    SharedPreferences.Editor e = preferences.edit();
-                    gsonG = new Gson();
-                    String strJson = gsonG.toJson(usrU);
-                    e.putString("User", strJson);
-                    e.apply();
-                    intent.putExtra("User", usrU);
-                    startActivity(intent);
-                    finish();
-                }
+        btnRegister.setOnClickListener((View view) -> {
+            boolean bDataCheck = checkDataEntered();
+            if (bDataCheck) {
+                usrU = new User();
+                strFirstName = edtFirstName.getText().toString();
+                usrU.setFirstName(strFirstName);
+                strLastName = edtLastName.getText().toString();
+                usrU.setLastName(strLastName);
+                strUsername = edtEmailAddress.getText().toString();
+                usrU.setEmailAddress(strUsername);
+                strPassword = edtPassword.getText().toString();
+                usrU.setPassword(strPassword);
+                strZipCode = edtZipCode.getText().toString();
+                usrU.setZipCode(strZipCode);
+                usrU.setPlayerNumber(1);
+                usrU.setCoins(2);
+                usrU.setExtraLives(2);
+                usrU.setGFPoints(100);
+                usrU.setGoodForceCode("DB105244");
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                SharedPreferences.Editor e = preferences.edit();
+                gsonG = new Gson();
+                String strJson = gsonG.toJson(usrU);
+                e.putString("User", strJson);
+                e.apply();
+                intent.putExtra("User", usrU);
+                startActivity(intent);
+                finish();
             }
         });
     }

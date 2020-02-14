@@ -45,34 +45,30 @@ public class WatchVideoActivity extends AppCompatActivity implements RewardedVid
         final Button btnContinue = findViewById(R.id.btnContinue);
         final Button btnMainMenu = findViewById(R.id.btnMainMenu);
 
-        btnContinue.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(WatchVideoActivity.this, FinalScoreActivity.class);
-                usrU.setGFPoints(usrU.getGFPoints() + 1000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("Game", gmG);
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnContinue.setOnClickListener((View view) -> {
+            Intent intA = new Intent(WatchVideoActivity.this, FinalScoreActivity.class);
+            usrU.setGFPoints(usrU.getGFPoints() + 1000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("Game", gmG);
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnMainMenu.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(WatchVideoActivity.this, GameStartActivity.class);
-                usrU.setGFPoints(usrU.getGFPoints() + 1000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnMainMenu.setOnClickListener((View view) -> {
+            Intent intA = new Intent(WatchVideoActivity.this, GameStartActivity.class);
+            usrU.setGFPoints(usrU.getGFPoints() + 1000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
     }
 

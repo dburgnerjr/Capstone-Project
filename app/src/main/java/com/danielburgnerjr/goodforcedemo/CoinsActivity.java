@@ -34,95 +34,83 @@ public class CoinsActivity extends AppCompatActivity {
         final Button btnFiftyCoins = findViewById(R.id.btnFiftyCoins);
         final Button btn100Coins = findViewById(R.id.btn100Coins);
 
-        btnOneCoin.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
-                usrU.setCoins(usrU.getCoins() + 1);
-                usrU.setGFPoints(usrU.getGFPoints() + 500);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnOneCoin.setOnClickListener((View view) -> {
+            Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
+            usrU.setCoins(usrU.getCoins() + 1);
+            usrU.setGFPoints(usrU.getGFPoints() + 500);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnFiveCoins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
-                usrU.setCoins(usrU.getCoins() + 5);
-                usrU.setGFPoints(usrU.getGFPoints() + 2500);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnFiveCoins.setOnClickListener((View view) -> {
+            Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
+            usrU.setCoins(usrU.getCoins() + 5);
+            usrU.setGFPoints(usrU.getGFPoints() + 2500);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnTenCoins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
-                usrU.setCoins(usrU.getCoins() + 10);
-                usrU.setGFPoints(usrU.getGFPoints() + 5000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnTenCoins.setOnClickListener((View view) -> {
+            Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
+            usrU.setCoins(usrU.getCoins() + 10);
+            usrU.setGFPoints(usrU.getGFPoints() + 5000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnTwentyCoins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
-                usrU.setCoins(usrU.getCoins() + 20);
-                usrU.setGFPoints(usrU.getGFPoints() + 10000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnTwentyCoins.setOnClickListener((View view) -> {
+            Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
+            usrU.setCoins(usrU.getCoins() + 20);
+            usrU.setGFPoints(usrU.getGFPoints() + 10000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btnFiftyCoins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
-                usrU.setCoins(usrU.getCoins() + 50);
-                usrU.setGFPoints(usrU.getGFPoints() + 25000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btnFiftyCoins.setOnClickListener((View view) -> {
+            Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
+            usrU.setCoins(usrU.getCoins() + 50);
+            usrU.setGFPoints(usrU.getGFPoints() + 25000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
-        btn100Coins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
-                usrU.setCoins(usrU.getCoins() + 100);
-                usrU.setGFPoints(usrU.getGFPoints() + 50000);
-                SharedPreferences.Editor e = preferences.edit();
-                gsonG = new Gson();
-                String strJson = gsonG.toJson(usrU);
-                e.putString("User", strJson);
-                e.apply();
-                intA.putExtra("User", usrU);
-                startActivity(intA);
-                finish();
-            }
+        btn100Coins.setOnClickListener((View view) -> {
+            Intent intA = new Intent(CoinsActivity.this, GameStartActivity.class);
+            usrU.setCoins(usrU.getCoins() + 100);
+            usrU.setGFPoints(usrU.getGFPoints() + 50000);
+            SharedPreferences.Editor e = preferences.edit();
+            gsonG = new Gson();
+            String strJson = gsonG.toJson(usrU);
+            e.putString("User", strJson);
+            e.apply();
+            intA.putExtra("User", usrU);
+            startActivity(intA);
+            finish();
         });
     }
 

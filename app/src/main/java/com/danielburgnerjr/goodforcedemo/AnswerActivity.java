@@ -50,11 +50,8 @@ public class AnswerActivity extends Activity {
                 usrU.setExtraLives(usrU.getExtraLives() + 1);
                 AlertDialog adAlertBox = new AlertDialog.Builder(this).create();
                 adAlertBox.setMessage("You earned an extra life for answering ten questions in a row correctly!");
-                adAlertBox.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface arg0, int arg1) {
-                            }
-                        });
+                adAlertBox.setButton(AlertDialog.BUTTON_POSITIVE, "OK", (DialogInterface arg0, int arg1) -> {
+                });
                 adAlertBox.show();
             }
         } else {
@@ -70,21 +67,19 @@ public class AnswerActivity extends Activity {
         txtNumStrikes.setText("Strikes: " + gmG.getStrikes());
         gmG.setQuestionNumber(gmG.getQuestionNumber() + 1);
 
-        btnContinue.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                if ((gmG.getStrikes() < 3) || (!gmG.isExtraLifeUsed())) {
-                    Intent intA = new Intent(AnswerActivity.this, QuestionActivity.class);
-                    intA.putExtra("User", usrU);
-                    intA.putExtra("Game", gmG);
-                    startActivity(intA);
-                    finish();
-                } else {
-                    Intent intA = new Intent(AnswerActivity.this, WatchVideoActivity.class);
-                    intA.putExtra("User", usrU);
-                    intA.putExtra("Game", gmG);
-                    startActivity(intA);
-                    finish();
-                }
+        btnContinue.setOnClickListener((View view) -> {
+            if ((gmG.getStrikes() < 3) || (!gmG.isExtraLifeUsed())) {
+                Intent intA = new Intent(AnswerActivity.this, QuestionActivity.class);
+                intA.putExtra("User", usrU);
+                intA.putExtra("Game", gmG);
+                startActivity(intA);
+                finish();
+            } else {
+                Intent intA = new Intent(AnswerActivity.this, WatchVideoActivity.class);
+                intA.putExtra("User", usrU);
+                intA.putExtra("Game", gmG);
+                startActivity(intA);
+                finish();
             }
         });
     }
