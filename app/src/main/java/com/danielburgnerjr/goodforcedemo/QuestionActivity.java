@@ -121,7 +121,6 @@ public class QuestionActivity extends Activity {
         btnFalse.setOnClickListener((View view) -> {
             mCountDown.cancel();
             Intent intA = new Intent(QuestionActivity.this, AnswerActivity.class);
-            //bYourAnswer = false;
             intA.putExtra("YourAnswer", bYourAnswer);
             intA.putExtra("CorrectAnswer", bCorrectAnswer);
             intA.putExtra("User", usrU);
