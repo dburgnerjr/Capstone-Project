@@ -65,7 +65,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="107dp"
         android:layout_toStartOf="@+id/txtGoodForce"
-        android:layout_toLeftOf="@+id/txtGoodForce"
         android:text="@string/login" />
 
     <Button
@@ -73,7 +72,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/btnLogin"
-        android:layout_toRightOf="@+id/btnBegin"
         android:layout_toEndOf="@+id/btnBegin"
         android:text="@string/register" />
 

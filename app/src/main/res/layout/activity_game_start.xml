@@ -41,7 +41,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_marginBottom="168dp"
         android:text="@string/progressVsGoal"
         android:textAlignment="center"
@@ -52,7 +51,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/btnExtraLives"
-        android:layout_toRightOf="@+id/btnExtraLives"
         android:layout_toEndOf="@+id/btnExtraLives"
         android:text="@string/watchVideo"
         tools:layout_editor_absoluteX="148dp"
@@ -64,7 +62,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnWatchVideo"
         android:layout_toStartOf="@+id/btnExtraLives"
-        android:layout_toLeftOf="@+id/btnExtraLives"
         android:text="@string/gameRules"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="399dp" />
@@ -83,7 +80,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnGameRules"
-        android:layout_alignLeft="@+id/btnGameRules"
         android:layout_marginBottom="106dp"
         android:text="@string/gfCoins" />
 
@@ -100,7 +96,6 @@
         android:layout_width="111dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnWatchVideo"
-        android:layout_alignLeft="@+id/btnWatchVideo"
         android:layout_alignTop="@+id/btnGameRules"
         android:text="@string/gfPoints" />
 
@@ -109,10 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/btnGameRules"
         android:layout_marginStart="86dp"
-        android:layout_marginLeft="86dp"
         android:text="@string/aboutGF" />
 
     <Button
@@ -120,10 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/btnGameRules"
         android:layout_marginEnd="93dp"
-        android:layout_marginRight="93dp"
         android:text="@string/logout" />
-
 </android.widget.RelativeLayout>

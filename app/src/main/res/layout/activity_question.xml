@@ -20,9 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
         android:layout_marginTop="64dp"
-        android:layout_toLeftOf="@+id/txtQuestion"
         android:layout_toStartOf="@+id/txtQuestion"
         android:text="@string/questionValue" />
 
@@ -32,7 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtQuestion"
         android:layout_marginTop="107dp"
-        android:layout_toLeftOf="@+id/txtQuestion"
         android:layout_toStartOf="@+id/txtQuestion"
         android:text="@string/questionTrue" />
 
@@ -42,7 +39,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/btnTrue"
         android:layout_toEndOf="@+id/txtQuestion"
-        android:layout_toRightOf="@+id/txtQuestion"
         android:text="@string/questionFalse" />
 
     <TextView
@@ -61,8 +57,6 @@
         android:layout_alignBaseline="@+id/txtQuestionValue"
         android:layout_alignBottom="@+id/txtQuestionValue"
         android:layout_alignEnd="@+id/btnFalse"
-        android:layout_alignRight="@+id/btnFalse"
         android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
         android:text="@string/questionTimer" />
 </android.widget.RelativeLayout>

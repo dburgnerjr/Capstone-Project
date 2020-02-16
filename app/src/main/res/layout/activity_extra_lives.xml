@@ -28,10 +28,8 @@
         android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
         android:text="@string/gfOneExtraLife" />
 
     <Button
@@ -39,10 +37,8 @@
         android:layout_width="161dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
         android:text="@string/gfTwoExtraLives" />
 
     <Button
@@ -50,7 +46,6 @@
         android:layout_width="161dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnOneExtraLife"
-        android:layout_alignLeft="@+id/btnOneExtraLife"
         android:layout_below="@+id/btnOneExtraLife"
         android:text="@string/gfThreeExtraLives" />
 
@@ -59,7 +54,6 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnTwoExtraLives"
-        android:layout_alignLeft="@+id/btnTwoExtraLives"
         android:layout_below="@+id/btnTwoExtraLives"
         android:text="@string/gfFourExtraLives" />
 
@@ -67,10 +61,10 @@
         android:id="@+id/btnFiveExtraLives"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnOneExtraLife"
-        android:layout_alignLeft="@+id/btnOneExtraLife"
-        android:layout_marginBottom="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginBottom="244dp"
         android:text="@string/gfFiveExtraLives" />
 
     <Button
@@ -78,7 +72,6 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnTwoExtraLives"
-        android:layout_alignLeft="@+id/btnTwoExtraLives"
         android:layout_alignTop="@+id/btnFiveExtraLives"
         android:text="@string/gfTenExtraLives" />
 </android.widget.RelativeLayout>

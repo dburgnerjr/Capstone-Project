@@ -28,10 +28,8 @@
         android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
         android:text="@string/gfOneCoin" />
 
     <Button
@@ -39,10 +37,8 @@
         android:layout_width="161dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
         android:text="@string/gfFiveCoins" />
 
     <Button
@@ -50,7 +46,6 @@
         android:layout_width="161dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnOneCoin"
-        android:layout_alignLeft="@+id/btnOneCoin"
         android:layout_below="@+id/btnOneCoin"
         android:text="@string/gfTenCoins" />
 
@@ -59,7 +54,6 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnFiveCoins"
-        android:layout_alignLeft="@+id/btnFiveCoins"
         android:layout_below="@+id/btnFiveCoins"
         android:text="@string/gf20Coins" />
 
@@ -67,10 +61,10 @@
         android:id="@+id/btnFiftyCoins"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/btnOneCoin"
-        android:layout_alignLeft="@+id/btnOneCoin"
-        android:layout_marginBottom="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="243dp"
         android:text="@string/gf50Coins" />
 
     <Button
@@ -78,7 +72,6 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnFiveCoins"
-        android:layout_alignLeft="@+id/btnFiveCoins"
         android:layout_alignTop="@+id/btnFiftyCoins"
         android:text="@string/gf100Coins" />
 </android.widget.RelativeLayout>

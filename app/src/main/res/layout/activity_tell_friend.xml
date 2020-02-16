@@ -31,6 +31,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="211dp"
         android:ems="10"
+        android:autofillHints="@string/inviteEmailAddress"
+        android:hint="@string/inviteEmailAddress"
         android:inputType="textEmailAddress"
         android:text="@string/inviteEmailAddress" />
 
@@ -41,6 +43,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="117dp"
+        android:autofillHints="@string/invitePhone"
+        android:hint="@string/invitePhone"
         android:ems="10"
         android:inputType="phone"
         android:text="@string/invitePhone" />
