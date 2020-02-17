@@ -96,10 +96,14 @@ public class QuestionActivity extends Activity {
             }
         }
 
-        txtQuestion.setText("This is a sample question.");
-        txtQuestionValue.setText(nQuestionValue + " Points");
-        txtScore.setText("Your Score: " + nScore);
-        txtTimer.setText("10");
+        String strQuestion = "This is a sample question.";
+        String strQuestionValue = nQuestionValue + " Points";
+        String strScore = "Your Score: " + nScore;
+        String strTimer = "10";
+        txtQuestion.setText(strQuestion);
+        txtQuestionValue.setText(strQuestionValue);
+        txtScore.setText(strScore);
+        txtTimer.setText(strTimer);
 
         Random randomno = new Random();
 

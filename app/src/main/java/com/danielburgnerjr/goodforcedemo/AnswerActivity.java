@@ -41,9 +41,10 @@ public class AnswerActivity extends Activity {
         gmG = (Game) intQ.getSerializableExtra("Game");
         bYourAnswer = intQ.getBooleanExtra("YourAnswer", false);
         bCorrectAnswer = intQ.getBooleanExtra("CorrectAnswer", false);
+        String strOutcome = "";
+        String strExplanation = "This is why your answer is right or wrong.";
         if (bYourAnswer == bCorrectAnswer) {
-            txtAnswerOutcome.setText("Correct!");
-            txtAnswerExplanation.setText("This is why your answer is correct.");
+            strOutcome += "Correct!";
             gmG.setScore(gmG.getScore() + gmG.getQuestionValue());
             gmG.setStreak(gmG.getStreak() + 1);
             if (gmG.getStreak() == 10) {
@@ -55,16 +56,19 @@ public class AnswerActivity extends Activity {
                 adAlertBox.show();
             }
         } else {
-            txtAnswerOutcome.setText("Wrong!");
-            txtAnswerExplanation.setText("This is why your answer is wrong.");
+            strOutcome += "Wrong!";
             gmG.setStrikes(gmG.getStrikes() + 1);
             gmG.setStreak(0);
         }
         if ((gmG.getStrikes() == 3) && (gmG.getExtraLives() == 0)) {
             gmG.setExtraLifeUsed(true);
         }
-        txtScoreAnswer.setText("Your Score: " + gmG.getScore());
-        txtNumStrikes.setText("Strikes: " + gmG.getStrikes());
+        txtAnswerOutcome.setText(strOutcome);
+        txtAnswerExplanation.setText(strExplanation);
+        String strScore = "Your Score: " + gmG.getScore();
+        String strStrikes = "Strikes: " + gmG.getStrikes();
+        txtScoreAnswer.setText(strScore);
+        txtNumStrikes.setText(strStrikes);
         gmG.setQuestionNumber(gmG.getQuestionNumber() + 1);
 
         btnContinue.setOnClickListener((View view) -> {

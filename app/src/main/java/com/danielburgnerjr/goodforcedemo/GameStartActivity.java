@@ -32,11 +32,16 @@ public class GameStartActivity extends Activity {
         final Button btnLogout = findViewById(R.id.btnLogout);
         intU = getIntent();
         usrU = (User) intU.getSerializableExtra("User");
+        String strWelcome = "Welcome ";
+        String strUserNum = "#";
+        String strExtraLives = "Extra Lives: ";
+        String strCoins = "Coins: ";
+        String strPoints = "Points: ";
         if (usrU == null) {
-            txtPlayerId.setText("Welcome No User #0");
-            btnExtraLives.setText("No Extra Lives");
-            btnGoodForceCoins.setText("No Coins");
-            btnGFPoints.setText("No Points");
+            strWelcome = strWelcome + strUserNum + "0";
+            strExtraLives += "0";
+            strCoins += "0";
+            strPoints += "0";
             btnPlay.setEnabled(false);
             btnExtraLives.setEnabled(false);
             btnGoodForceCoins.setEnabled(false);
@@ -45,11 +50,15 @@ public class GameStartActivity extends Activity {
             btnWatchVideo.setEnabled(false);
             btnLogout.setEnabled(false);
         } else {
-            txtPlayerId.setText("Welcome " + usrU.getFirstName() + " " + usrU.getLastName() + ", #" + usrU.getPlayerNumber());
-            btnExtraLives.setText("Extra Lives: " + usrU.getExtraLives());
-            btnGoodForceCoins.setText("Coins: " + usrU.getCoins());
-            btnGFPoints.setText("Points: " + usrU.getGFPoints());
+            strWelcome = strWelcome + usrU.getFirstName() + " " + usrU.getLastName() + "," + strUserNum + usrU.getPlayerNumber();
+            strExtraLives += usrU.getExtraLives();
+            strCoins += usrU.getCoins();
+            strPoints += usrU.getGFPoints();
         }
+        txtPlayerId.setText(strWelcome);
+        btnExtraLives.setText(strExtraLives);
+        btnGoodForceCoins.setText(strCoins);
+        btnGFPoints.setText(strPoints);
 
         btnPlay.setOnClickListener((View view) -> {
             Intent intA = new Intent(GameStartActivity.this, QuestionActivity.class);
